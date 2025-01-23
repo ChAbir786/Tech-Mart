@@ -123,7 +123,6 @@ body {
     background-color: #1f1f1f;
     color: #e0e0e0;
 }
-
 #contact-form {
     max-width: 400px;
     margin: 0 auto;
@@ -157,7 +156,6 @@ body {
     text-align: center;
     padding: 1rem;
 }
-
 @keyframes slideIn {
     from {
         opacity: 0;
