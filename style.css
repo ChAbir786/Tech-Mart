@@ -168,3 +168,165 @@ body {
         transform: translateY(0);
     }
 }
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #ddd;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* Products Section */
+.products {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.product h3, .product p {
+    margin: 10px 0;
+}
+
+.product button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background-color: #444;
+}
+
+/* About Section */
+.about {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Cart Section */
+.cart {
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.cart p {
+    font-size: 1.2em;
+}
+
+/* Footer */
+.footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    button {
+        padding: 8px 15px;
+    }
+
+    .cart p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product button {
+        padding: 8px 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
