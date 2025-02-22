@@ -3,9 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conform Order</title>
+    <title>Confirm Order</title>
+    <style>
+        /* Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        /* Message Box */
+        .message-box {
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+            display: inline-block;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Payment Section */
+        .payment-section {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .payment-number {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4CAF50; /* Green */
+            margin: 10px 0;
+        }
+
+        /* Copy Button */
+        .copy-btn {
+            background-color: #007bff; /* Blue */
+            color: white;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .copy-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Go to Home Button */
+        .home-btn {
+            display: inline-block;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .home-btn:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+    </style>
 </head>
 <body>
-    <h1>Please Send Money on This Number and Send us Screenshot on Whatsapp Thanks</h1>
+    <div class="message-box">
+        <h1>Please Send Money to This Number and Send Us a Screenshot on WhatsApp</h1>
+
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <p>Send Money to:</p>
+            <p class="payment-number" id="paymentNumber">+92 300 1234567</p>
+            <button class="copy-btn" onclick="copyNumber()">Copy Number</button>
+        </div>
+
+        <a href="index.html" class="home-btn">Go to Home</a>
+    </div>
+
+    <script>
+        function copyNumber() {
+            let number = document.getElementById("paymentNumber").innerText;
+            navigator.clipboard.writeText(number);
+            alert("Number copied: " + number);
+        }
+    </script>
 </body>
 </html>
