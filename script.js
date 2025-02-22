@@ -48,3 +48,67 @@ function checkout() {
         updateCart();
     }
 }
+
+let cartCount = 0;
+let cartItems = [];
+let totalPrice = 0;
+
+// Function to add items to the cart
+function addToCart(productName, productPrice) {
+    // Increment cart count
+    cartCount++;
+    document.getElementById("cartCount").textContent = cartCount;
+
+    // Add product to cart array
+    cartItems.push({ name: productName, price: productPrice });
+
+    // Update total price
+    totalPrice += productPrice;
+
+    // Update cart section
+    updateCartUI();
+}
+
+// Function to update the cart section
+function updateCartUI() {
+    const cartItemsContainer = document.getElementById("cart-items");
+    const totalElement = document.getElementById("total");
+
+    // Clear cart items container
+    cartItemsContainer.innerHTML = "";
+
+    // Populate cart items
+    cartItems.forEach((item, index) => {
+        const itemElement = document.createElement("div");
+        itemElement.className = "cart-item";
+        itemElement.innerHTML = `
+            <p>${item.name} - $${item.price.toFixed(2)}</p>
+            <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+    });
+
+    // Update total price
+    totalElement.textContent = totalPrice.toFixed(2);
+}
+
+// Function to remove an item from the cart
+function removeFromCart(index) {
+    // Deduct item price from total
+    totalPrice -= cartItems[index].price;
+
+    // Remove item from cart array
+    cartItems.splice(index, 1);
+
+    // Decrement cart count
+    cartCount--;
+    document.getElementById("cartCount").textContent = cartCount;
+
+    // Update cart UI
+    updateCartUI();
+}
+
+// Scroll to cart section when the floating cart is clicked
+document.getElementById("floatingCart").addEventListener("click", () => {
+    document.getElementById("cart").scrollIntoView({ behavior: "smooth" });
+});
